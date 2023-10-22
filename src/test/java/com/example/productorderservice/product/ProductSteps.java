@@ -3,7 +3,6 @@ package com.example.productorderservice.product;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -33,5 +32,9 @@ public class ProductSteps {
         final int price = 1000;
         final DiscountPolicy discountPolicy = DiscountPolicy.NONE;
         return new AddProductRequest(name,price,discountPolicy);
+    }
+
+    public static UpdateProductRequest 상품수정요청_생성() {
+        return new UpdateProductRequest("상품 수정", 2000, DiscountPolicy.NONE);
     }
 }
