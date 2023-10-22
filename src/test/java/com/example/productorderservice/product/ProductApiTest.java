@@ -11,6 +11,8 @@ import org.springframework.http.MediaType;
 
 import java.awt.*;
 
+import static com.example.productorderservice.product.ProductSteps.상품등록요청;
+import static com.example.productorderservice.product.ProductSteps.상품등록요청_생성;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class ProductApiTest extends ApiTest {
@@ -22,24 +24,6 @@ public class ProductApiTest extends ApiTest {
         final var request = 상품등록요청_생성();
         final var response = 상품등록요청(request);
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
-    }
-
-    private static ExtractableResponse<Response> 상품등록요청(AddProductRequest request) {
-        final ExtractableResponse<Response> response = RestAssured.given().log().all()
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .body(request)
-                .when()
-                .post("/product")
-                .then()
-                .log().all().extract();
-        return response;
-    }
-
-    private static AddProductRequest 상품등록요청_생성(){
-        final String name = "상품명";
-        final int price = 1000;
-        final DiscountPolicy discountPolicy = DiscountPolicy.NONE;
-        return new AddProductRequest(name,price,discountPolicy);
     }
 
 }
