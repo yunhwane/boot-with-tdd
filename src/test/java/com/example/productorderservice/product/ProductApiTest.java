@@ -16,9 +16,6 @@ import static com.example.productorderservice.product.ProductSteps.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class ProductApiTest extends ApiTest {
-
-
-
     @Autowired
     ProductRepository productRepository;
 

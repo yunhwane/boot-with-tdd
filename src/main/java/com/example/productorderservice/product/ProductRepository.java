@@ -7,5 +7,5 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Repository
-interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 }
