@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 @RestController
 @RequestMapping("/products")
-class ProductService {
+public class ProductService {
 
     private final ProductPort productPort;
 
