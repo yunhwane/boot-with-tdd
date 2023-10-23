@@ -17,6 +17,8 @@ import org.springframework.http.MediaType;
 import java.awt.*;
 import java.net.http.HttpResponse;
 
+import static com.example.productorderservice.order.OrderSteps.상품주문요청;
+import static com.example.productorderservice.order.OrderSteps.상품주문요청_생성;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -26,26 +28,11 @@ public class OrderApiTest extends ApiTest {
     @Test
     void 상품주문() {
         ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
-        final CreateOrderRequest request = 상품주문요청_생성();
-
-        final ExtractableResponse<Response> response = RestAssured.given().log().all()
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .body(request)
-                .when()
-                .post("/orders")
-                .then().log().all()
-                .extract();
-
+        final var request = 상품주문요청_생성();
+        final var response = 상품주문요청(request);
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
-
-
     }
 
-    private static CreateOrderRequest 상품주문요청_생성() {
-        final Long productId = 1L;
-        final int quantity = 2;
-        final CreateOrderRequest request = new CreateOrderRequest(productId,quantity);
-        return request;
-    }
+
 
 }
