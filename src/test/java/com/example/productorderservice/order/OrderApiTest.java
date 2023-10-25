@@ -32,7 +32,4 @@ public class OrderApiTest extends ApiTest {
         final var response = 상품주문요청(request);
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
     }
-
-
-
 }
