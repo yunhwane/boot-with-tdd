@@ -1,5 +1,7 @@
 package com.example.productorderservice.payment;
 
+import com.example.productorderservice.PaymentRequest;
+
 public class PaymentSteps {
 
     public static PaymentRequest 주문결제요청_생성() {

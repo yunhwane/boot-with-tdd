@@ -1,8 +1,8 @@
-package com.example.productorderservice.payment;
+package com.example.productorderservice;
 
 import com.example.productorderservice.order.Order;
 
-interface PaymentPort {
+public interface PaymentPort {
 
     Order getOrder(final Long orderId);
 
