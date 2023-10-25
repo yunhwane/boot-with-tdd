@@ -1,4 +1,4 @@
-package com.example.productorderservice.payment;
+package com.example.productorderservice.payment.adapter;
 
 /*
 결제 api 연동 가정 후, 결제 api 호출

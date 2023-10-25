@@ -25,7 +25,6 @@ public class PaymentApiTest extends ApiTest{
 
         ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
         OrderSteps.상품주문요청(OrderSteps.상품주문요청_생성());
-
         final var request = 주문결제요청_생성();
         final var response = 주문결제요청(request);
 
